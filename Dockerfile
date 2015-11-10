@@ -15,6 +15,8 @@ ENV SONARQUBE_JDBC_URL jdbc:h2:tcp://localhost:9092/sonar
 
 ENV SONAR_VERSION 5.2
 
+RUN apk-install curl gpg unzip
+
 # pub   2048R/D26468DE 2015-05-25
 #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
 # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
