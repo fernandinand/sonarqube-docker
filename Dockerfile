@@ -43,7 +43,7 @@ RUN set -x \
 	-O sonar-cobertura-plugin-1.6.3.jar \
 	&& wget http://sonarsource.bintray.com/Distribution/sonar-csharp-plugin/sonar-csharp-plugin-4.3.jar \
 	-O sonar-csharp-plugin-4.3.jar \
-	&& wget http://github.com/SonarCommunity/sonar-css/releases/download/1.5/sonar-css-plugin-1.5.jar \
+	&& wget --no-check-certificate https://github.com/SonarCommunity/sonar-css/releases/download/1.5/sonar-css-plugin-1.5.jar \
 	-O sonar-css-plugin-1.5.jar \
 	&& wget http://sonarsource.bintray.com/Distribution/sonar-findbugs-plugin/sonar-findbugs-plugin-3.3.jar \
 	-O sonar-findbugs-plugin-3.3.jar \
