@@ -24,7 +24,7 @@ RUN apk add --update curl gnupg unzip bash
 RUN gpg --keyserver ha.pool.sks-keyservers.net --recv-keys F1182E81C792928921DBCAB4CFCA4A29D26468DE
 
 RUN set -x \
-	&& mkdir -p $SONARQUBE_HOME \
+	&& mkdir /opt \
 	&& cd /opt \
 	&& curl -o sonarqube.zip -fSL https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-$SONAR_VERSION.zip \
 	&& curl -o sonarqube.zip.asc -fSL https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-$SONAR_VERSION.zip.asc \
