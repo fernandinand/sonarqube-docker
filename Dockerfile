@@ -1,4 +1,4 @@
-FROM frolvlad/alpine-oraclejdk8:slim
+FROM frolvlad/alpine-oraclejdk8:latest
 
 MAINTAINER Jan Boonen <jan.boonen@geodan.nl>
 
@@ -15,7 +15,7 @@ ENV SONARQUBE_JDBC_URL jdbc:h2:tcp://localhost:9092/sonar
 
 ENV SONAR_VERSION 5.2
 
-RUN apk add --update curl gnupg unzip
+RUN apk add --update curl gnupg unzip bash
 
 # pub   2048R/D26468DE 2015-05-25
 #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
@@ -38,4 +38,5 @@ VOLUME ["$SONARQUBE_HOME/data", "$SONARQUBE_HOME/extensions"]
 
 WORKDIR $SONARQUBE_HOME
 COPY run.sh $SONARQUBE_HOME/bin/
+RUN chmod +x $SONARQUBE_HOME/bin/run.sh
 ENTRYPOINT ["./bin/run.sh"]
